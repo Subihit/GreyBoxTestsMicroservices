@@ -1,6 +1,6 @@
 steps:
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['mvn', 'clean', 'test', '-Dtest=TutorialTests.java']
-logsBucket: 'gs://_Default'
+logsBucket: 'gs://fut'
 options:
   logging: GCS_ONLY
