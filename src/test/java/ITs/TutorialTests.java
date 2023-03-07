@@ -34,7 +34,6 @@ public class TutorialTests {
 
     Long id;
 
-
     static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>(DockerImageName.parse("postgres:latest"))
             .withUsername("password")
             .withPassword("user")
@@ -55,9 +54,10 @@ public class TutorialTests {
 
         tutorial = new Tutorial("testTitle121", "testDesc212", false);
 
+
         ResponseEntity<Tutorial> responseEntity = tutorialController.createTutorial(tutorial);
 
-        id = Objects.requireNonNull(responseEntity.getBody().getId());
+        id = responseEntity.getBody().getId();
     }
 
     @Test

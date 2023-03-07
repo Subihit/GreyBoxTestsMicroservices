@@ -1,0 +1,7 @@
+steps:
+  - name: 'gcr.io/cloud-builders/gcloud'
+    args:
+      - 'mvn'
+      - 'clean'
+      - 'test'
+      - '-Dtest=TutorialTests.java'

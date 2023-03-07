@@ -12,22 +12,7 @@ import static io.restassured.RestAssured.given;
 
 public class TutorialAPITests {
 
-    static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>()
-            .withUsername("user")
-            .withPassword("password")
-            .withDatabaseName("test_db");
-
-
-    @DynamicPropertySource
-    static void postgresqlProperties(DynamicPropertyRegistry registry) {
-        postgres.start();
-        registry.add("spring.datasource.url", postgres::getJdbcUrl);
-        registry.add("spring.datasource.username", postgres::getUsername);
-        registry.add("spring.datasource.password", postgres::getPassword);
-        //registry.add("spring.liquibase.contexts", () -> "!prod");
-    }
-
-   // @Test
+   @Test
     public void addtutorial() {
 
         Header header = new Header("user", "452c4e4e-bbe0-409f-a21e-2722eda012df");
