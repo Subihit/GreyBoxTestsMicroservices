@@ -1,5 +1,5 @@
 steps:
   - name: 'gradle:8-jdk17'
-    args: ['mvn', 'clean', 'test', '-Dtest=TutorialTests.java']
+    args: ['gradle', 'clean', 'test']
 options:
   logging: CLOUD_LOGGING_ONLY

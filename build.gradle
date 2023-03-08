@@ -47,6 +47,24 @@ tasks.withType(Javadoc) {
     options.encoding = 'UTF-8'
 }
 
+test {
+    useJUnitPlatform()
+}
+
+test {
+    afterSuite { desc, result ->
+        if (!desc.parent)
+            println("${result.resultType} " +
+                    "(${result.testCount} tests, " +
+                    "${result.successfulTestCount} successes, " +
+                    "${result.failedTestCount} failures, " +
+                    "${result.skippedTestCount} skipped)")
+    }
+}
+
+
+
+
 
 
 

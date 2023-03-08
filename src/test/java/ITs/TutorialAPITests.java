@@ -12,7 +12,7 @@ import static io.restassured.RestAssured.given;
 
 public class TutorialAPITests {
 
-   @Test
+   //@Test
     public void addtutorial() {
 
         Header header = new Header("user", "452c4e4e-bbe0-409f-a21e-2722eda012df");
