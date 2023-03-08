@@ -22,7 +22,6 @@ import org.testcontainers.utility.DockerImageName;
 
 import java.util.Objects;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest(classes = SpringBootJpaPostgresqlApplication.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TutorialTests {
