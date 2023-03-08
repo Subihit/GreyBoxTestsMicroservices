@@ -32,20 +32,20 @@ public class TutorialTests {
 
     Long id;
 
-    static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>(DockerImageName.parse("postgres:latest"))
-            .withUsername("password")
-            .withPassword("user")
-            .withDatabaseName("test_db");
-
-    @DynamicPropertySource
-    static void props(DynamicPropertyRegistry registry) {
-        System.out.println("start postgress");
-        postgres.start();
-
-        registry.add("spring.datasource.url", postgres::getJdbcUrl);
-        registry.add("spring.datasource.username", postgres::getUsername);
-        registry.add("spring.datasource.password", postgres::getPassword);
-    }
+//    static PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>(DockerImageName.parse("postgres:latest"))
+//            .withUsername("password")
+//            .withPassword("user")
+//            .withDatabaseName("test_db");
+//
+//    @DynamicPropertySource
+//    static void props(DynamicPropertyRegistry registry) {
+//        System.out.println("start postgress");
+//        postgres.start();
+//
+//        registry.add("spring.datasource.url", postgres::getJdbcUrl);
+//        registry.add("spring.datasource.username", postgres::getUsername);
+//        registry.add("spring.datasource.password", postgres::getPassword);
+//    }
 
 
     @BeforeAll

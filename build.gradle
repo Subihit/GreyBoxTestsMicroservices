@@ -5,6 +5,7 @@
 plugins {
     id 'java-library'
     id 'maven-publish'
+    id("com.avast.gradle.docker-compose") version "0.14.0"
 }
 
 repositories {
@@ -47,11 +48,9 @@ tasks.withType(Javadoc) {
     options.encoding = 'UTF-8'
 }
 
-test {
-    useJUnitPlatform()
-}
 
 test {
+    useJUnitPlatform()
     afterSuite { desc, result ->
         if (!desc.parent)
             println("${result.resultType} " +
@@ -60,6 +59,14 @@ test {
                     "${result.failedTestCount} failures, " +
                     "${result.skippedTestCount} skipped)")
     }
+}
+
+
+
+dockerCompose {
+    useComposeFiles.add("src/test/resources/docker-compose.yaml")
+
+    isRequiredBy(tasks.test)
 }
 
 
