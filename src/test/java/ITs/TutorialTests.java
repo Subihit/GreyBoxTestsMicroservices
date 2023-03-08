@@ -41,6 +41,7 @@ public class TutorialTests {
 
     @DynamicPropertySource
     static void props(DynamicPropertyRegistry registry) {
+        System.out.println("start postgress");
         postgres.start();
 
         registry.add("spring.datasource.url", postgres::getJdbcUrl);
