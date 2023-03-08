@@ -1,6 +1,5 @@
 steps:
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ['mvn', 'clean', 'test', '-Dtest=TutorialTests.java']
-logsBucket: 'gs://fut-spike'
 options:
-  logging: GCS_ONLY
+  logging: CLOUD_LOGGING_ONLY
