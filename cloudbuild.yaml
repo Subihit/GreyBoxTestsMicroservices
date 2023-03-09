@@ -1,7 +1,9 @@
 steps:
-  - name: 'gcr.io/cloud-builders/docker'
-    args: ['docker-compose', 'up']
+  - name: 'docker/compose:1.19.0'
+    args: ['up','-d']
   - name: 'gradle:8-jdk17'
     args: ['gradle', 'clean', 'test']
+  - name: 'docker/compose:1.19.0'
+    args: ['down']
 options:
   logging: CLOUD_LOGGING_ONLY
