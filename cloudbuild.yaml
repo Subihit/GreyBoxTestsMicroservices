@@ -1,14 +1,6 @@
 steps:
-  - name: 'docker/compose:1.19.0'
-    args: [ 'up','-d' ]
-    id: setup
-  - name: 'gradle:8-jdk17'
+  - name: 'asia-south1-docker.pkg.dev/calm-suprstate-374211/gradledocker/gradledocker'
     args: [ 'gradle', 'clean', 'test' ]
-    waitFor: ['setup']
-    id: test
-  - name: 'docker/compose:1.19.0'
-    args: [ 'down' ]
-    waitFor: ['test']
 
 options:
   logging: CLOUD_LOGGING_ONLY
