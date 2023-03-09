@@ -1,9 +1,11 @@
 steps:
   - name: 'docker/compose:1.19.0'
-    args: ['up','-d']
+    args: [ 'up','-d' ]
+    id: setup
   - name: 'gradle:8-jdk17'
-    args: ['gradle', 'clean', 'test']
+    args: [ 'gradle', 'clean', 'test' ]
+    dependsOn: setup
   - name: 'docker/compose:1.19.0'
-    args: ['down']
+    args: [ 'down' ]
 options:
   logging: CLOUD_LOGGING_ONLY
