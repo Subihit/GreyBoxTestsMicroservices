@@ -5,7 +5,10 @@ steps:
   - name: 'gradle:8-jdk17'
     args: [ 'gradle', 'clean', 'test' ]
     waitFor: ['setup']
+    id: test
   - name: 'docker/compose:1.19.0'
     args: [ 'down' ]
+    waitFor: ['test']
+
 options:
   logging: CLOUD_LOGGING_ONLY
