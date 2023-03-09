@@ -1,6 +1,6 @@
 steps:
   - name: 'docker/compose:1.19.0'
-    args: [ 'up' ]
+    args: [ 'up','-d' ]
     id: setup
   - name: 'gradle:8-jdk17'
     args: [ 'gradle', 'clean', 'test' ]
