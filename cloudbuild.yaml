@@ -1,6 +1,5 @@
 steps:
   - name: 'asia-south1-docker.pkg.dev/calm-suprstate-374211/gradledocker/gradledocker'
-    entrypoint: docker
     args: [ 'gradle', 'clean', 'test' ]
 
 options:
