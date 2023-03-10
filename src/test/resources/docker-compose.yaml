@@ -12,7 +12,7 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
       POSTGRES_DB: postgres
-#networks:
-#  default:
-#    external:
-#      name: cloudbuild
+networks:
+  default:
+    external:
+      name: cloudbuild
