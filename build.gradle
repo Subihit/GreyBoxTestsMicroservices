@@ -62,11 +62,13 @@ test {
 }
 
 
-dockerCompose {
+tasks.create("dockerrun") {
     useComposeFiles.add("src/test/resources/docker-compose.yaml")
-
     isRequiredBy(tasks.test)
+
+
 }
+
 
 
 
