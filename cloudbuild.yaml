@@ -1,6 +1,9 @@
 steps:
   - name: 'asia-south1-docker.pkg.dev/calm-suprstate-374211/gradledocker/gradledocker'
     args: [ 'gradle', 'clean', 'test' ]
+    env:
+      - 'DOCKER_COMPOSE_FILE=docker-compose_ci.yaml'
+      - 'HOST=postgres'
 
 options:
   logging: CLOUD_LOGGING_ONLY
