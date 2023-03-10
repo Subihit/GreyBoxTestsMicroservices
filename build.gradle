@@ -5,7 +5,7 @@
 plugins {
     id 'java-library'
     id 'maven-publish'
-    id("com.avast.gradle.docker-compose") version "0.14.0"
+    id("com.avast.gradle.docker-compose") version "0.14.11"
 }
 
 repositories {
@@ -62,11 +62,9 @@ test {
 }
 
 
-tasks.create("dockerrun") {
+dockerCompose {
     useComposeFiles.add("src/test/resources/docker-compose.yaml")
     isRequiredBy(tasks.test)
-
-
 }
 
 
