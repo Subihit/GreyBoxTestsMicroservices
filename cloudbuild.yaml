@@ -1,7 +1,7 @@
 steps:
   - name: 'asia-south1-docker.pkg.dev/calm-suprstate-374211/gradledocker/gradledocker'
     env:
-      - 'spring.datasource.url= jdbc:postgresql://postgres:5432/postgres'
+      - 'spring.datasource.url= jdbc:postgresql://postgres:password@postgress:5432/postgres'
     args: [ 'gradle', 'clean', 'test' ]
 
 options:
